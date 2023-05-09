@@ -15,14 +15,13 @@ function animOnScroll(text, speed) {
    let interval = setInterval(() => {
       if ((pageYOffset > textOffset - point) && pageYOffset < (textOffset + textHeight)) {
          clearInterval(interval);
-         let split = inner
          let i = 0;
          let int = setInterval(() => {
-            if (split[i] === '\ud83d') {
+            if (inner[i] === '\ud83d') {
                text.innerHTML += '<div class=\'br\'></div>'
                i += 2;
             }
-            text.innerHTML += split[i];
+            text.innerHTML += inner[i];
             if (i >= inner.length - 1) {
                clearInterval(int);
                text.style.height = 'auto'
@@ -32,7 +31,7 @@ function animOnScroll(text, speed) {
       }
    }, 210)
 }
-animOnScroll(textOne, 4);
+animOnScroll(textOne, 8);
 animOnScroll(titleOne, 100);
 function affset(el) {
    const rect = el.getBoundingClientRect(),
