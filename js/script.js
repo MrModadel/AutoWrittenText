@@ -2,33 +2,30 @@ let textOne = document.querySelector('#typed');
 let titleOne = document.querySelector('#title');
 function animOnScroll(text, speed) {
    let h = text.getBoundingClientRect().height;
-
    const textHeight = text.offsetHeight;
    const textOffset = affset(text).top;
    const start = 4;
+
    let point = window.innerHeight - textHeight / start;
    if (textHeight > window.innerHeight) {
       point = window.innerHeight - window.innerHeight / start;
    }
+
    let inner = text.innerText;
    text.style.height = h + 'px'
-   text.innerText = ' ';
+   text.innerText = '';
+   
    let interval = setInterval(() => {
       if ((pageYOffset > textOffset - point) && pageYOffset < (textOffset + textHeight)) {
          clearInterval(interval);
-         let split = inner.split('');
+         let split = inner
          let i = 0;
          let int = setInterval(() => {
             if (split[i] === '\ud83d') {
                text.innerHTML += '<div class=\'br\'></div>'
                i += 2;
             }
-            if (split[i] === ' ') {
-               text.innerHTML += ' ' + split[i + 1];
-               i++;
-            } else {
-               text.innerHTML += split[i];
-            }
+            text.innerHTML += split[i];
             if (i >= inner.length - 1) {
                clearInterval(int);
             }
@@ -45,15 +42,6 @@ function affset(el) {
       scrollTop = window.pageYOffset || document.documentElement.scrollTop;
    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
-
-
-
-
-
-
-
-
-
 
 
 
