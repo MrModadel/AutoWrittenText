@@ -5,16 +5,13 @@ function animOnScroll(text, speed) {
    const textHeight = text.offsetHeight;
    const textOffset = affset(text).top;
    const start = 4;
-
    let point = window.innerHeight - textHeight / start;
    if (textHeight > window.innerHeight) {
       point = window.innerHeight - window.innerHeight / start;
    }
-
    let inner = text.innerText;
    text.style.height = h + 'px'
    text.innerText = '';
-   
    let interval = setInterval(() => {
       if ((pageYOffset > textOffset - point) && pageYOffset < (textOffset + textHeight)) {
          clearInterval(interval);
