@@ -25,6 +25,7 @@ function animOnScroll(text, speed) {
             text.innerHTML += split[i];
             if (i >= inner.length - 1) {
                clearInterval(int);
+               text.style.height = 'auto'
             }
             i++;
          }, speed)
