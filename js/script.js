@@ -35,7 +35,7 @@ function animOnScroll(text, speed) {
             i++;
          }, speed)
       }
-   }, 40)
+   }, 210)
 }
 animOnScroll(textOne, 4);
 animOnScroll(titleOne, 100);
@@ -66,7 +66,7 @@ let btn = document.querySelector('#btn');
 window.onscroll = () => {
    let y = window.scrollY
    stars.style.margin = (y * 0.45) + "px"
-   moon.style.marginTop = (y * 0.65) + "px"
+   moon.style.marginTop = (y * 0.70) + "px"
    ges.style.marginTop = (y * 0.55) + "px"
    text.style.marginRight = (y * 3) + "px"
    btn.style.marginTop = (y * 0.55) + "px"
