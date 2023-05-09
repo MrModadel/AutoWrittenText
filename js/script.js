@@ -53,6 +53,6 @@ window.onscroll = () => {
    stars.style.margin = (y * 0.45) + "px"
    moon.style.marginTop = (y * 0.70) + "px"
    ges.style.marginTop = (y * 0.55) + "px"
-   text.style.marginRight = (y * 3) + "px"
+   text.style.marginRight = (y * 4) + "px"
    btn.style.marginTop = (y * 0.55) + "px"
 }
